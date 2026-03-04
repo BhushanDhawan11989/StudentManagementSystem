@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Student Management System</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" th:href="@{/students}">🎓 StudentMS</a>
+        <a class="btn btn-light" th:href="@{/students/add}">+ Add Student</a>
+    </div>
+</nav>
+
+<div class="container mt-4">
+
+```
+<h2 class="text-center mb-4">Student List</h2>
+
+<div class="card shadow">
+    <div class="card-body">
+
+        <table class="table table-hover table-bordered">
+
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th width="200px">Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr th:each="student : ${students}">
+                    <td th:text="${student.id}"></td>
+                    <td th:text="${student.firstName}"></td>
+                    <td th:text="${student.lastName}"></td>
+                    <td th:text="${student.email}"></td>
+
+                    <td>
+                        <a th:href="@{/students/edit/{id}(id=${student.id})}"
+                           class="btn btn-warning btn-sm">Edit</a>
+
+                        <a th:href="@{/students/delete/{id}(id=${student.id})}"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Delete this student?')">
+                           Delete
+                        </a>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+```
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
