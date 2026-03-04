@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f5f5;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app-container {
+  min-height: 100vh;
+}
+
+.navbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.nav-brand h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.nav-btn.active {
+  background: white;
+  color: #667eea;
+  border-color: white;
+}
+
+.nav-user {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 2px solid rgba(255,255,255,0.3);
+}
+
+.nav-user span {
+  color: white;
+  font-weight: 600;
+}
+
+.logout-btn {
+  padding: 8px 20px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: white;
+  color: #667eea;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.student-form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.student-form input {
+  padding: 12px 15px;
+  border: 2px solid #ecf0f1;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.student-form input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.student-form button {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.student-form button:hover {
+  transform: translateY(-2px);
+}
+
+.cancel-btn {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
+}
+
+.loading, .error, .no-data {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.loading {
+  color: #667eea;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+.no-data {
+  color: #95a5a6;
+}
+
+.table-container {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.student-table th {
+  padding: 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.student-table tbody tr {
+  border-bottom: 1px solid #ecf0f1;
+  transition: background 0.3s ease;
+}
+
+.student-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.student-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.student-table td {
+  padding: 18px 20px;
+  color: #2c3e50;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+}
+
+.edit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  transform: translateY(-2px);
+}
+
+.view-only {
+  color: #95a5a6;
+  font-style: italic;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #f8f9fa;
+  color: #667eea;
+  font-weight: 600;
+  border-top: 2px solid #ecf0f1;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-brand h1 {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-btn {
+    width: 100%;
+  }
+
+  .nav-user {
+    flex-direction: column;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    border-top: 2px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+    width: 100%;
+  }
+  
+  .student-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .student-table th,
+  .student-table td {
+    padding: 12px 10px;
+    font-size: 0.9rem;
+  }
+}
